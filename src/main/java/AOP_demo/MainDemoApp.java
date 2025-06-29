@@ -25,6 +25,9 @@ public class MainDemoApp {
 		theAccountDAO.doWork();
 		
 		
+		theAccountDAO.setName("Ronaldo");
+		theAccountDAO.setServiceCode("1000 goals");
+		
 		theMembershipDAO.addSillyMember();
 		theMembershipDAO.goToSleep();
 
