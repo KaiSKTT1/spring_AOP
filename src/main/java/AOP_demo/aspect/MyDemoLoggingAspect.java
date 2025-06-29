@@ -1,4 +1,4 @@
-package AOP_demo;
+package AOP_demo.aspect;
 
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -12,7 +12,7 @@ public class MyDemoLoggingAspect {
 	
 	//let's start with an @Before advice 
 	
-	@Before("execution(public * add*())")
+	@Before("execution(* AOP_demo.DAO.*.*(..))")
 	public void beforeAddAccountAdvice() {
 		System.out.println("\n=====>>> Executing @Before advice on addACount()");
 	}
