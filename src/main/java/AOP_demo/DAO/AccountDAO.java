@@ -3,6 +3,8 @@ package AOP_demo.DAO;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.management.RuntimeErrorException;
+
 import org.springframework.stereotype.Component;
 
 import AOP_demo.Account;
@@ -15,7 +17,12 @@ public class AccountDAO {
 	
 	//add a new method: findAccount()
 	
-	public java.util.List<Account> findAccounts() {
+	public java.util.List<Account> findAccounts(boolean flag) {
+		
+		if(flag) {
+			throw new RuntimeException("$$$ Lỗi Exception $$$");
+		}
+		
 		List<Account> myAccounts = new ArrayList<Account>();
 		
 		//create sample accounts
